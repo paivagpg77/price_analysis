@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Monitoramento de Preços</title>
+</head>
+<body>
+    <h1>Monitor de Preço</h1>
+
+    <div class="formato">
+        <input type="text" id="nome" placeholder="Nome do Produto">
+        <input type="text" id="link" placeholder="Link do Produto">
+        <input type="text" id="preco" placeholder="Preço atual" step="0.01">
+        <button onclick="salvar()">Salvar</button>
+
+    </div>
+
+    <h2>Produtos Monitorados</h2>
+    <div id="lista"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
