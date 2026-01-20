@@ -16,24 +16,23 @@ async function getPrice(url) {
 
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 0 });
 
-  // 🔥 espera real (Kabum/Pichau precisam disso)
+
   await page.waitForTimeout(5000);
 
   let priceText = null;
 
-  // 1️⃣ tenta seletor salvo
   try {
     priceText = await customScrape(page, url);
   } catch {}
 
-  // 2️⃣ tenta scraping automático
+
   if (!priceText) {
     try {
       priceText = await autoScrape(page);
     } catch {}
   }
 
-  // 3️⃣ fallback pesado: varrer texto da página
+
   if (!priceText) {
     priceText = await page.evaluate(() => {
       const bodyText = document.body.innerText;
